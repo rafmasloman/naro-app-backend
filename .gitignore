@@ -1,0 +1,49 @@
+# Binaries (hasil build)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+main
+*.out
+
+# Folder hasil build
+/bin/
+/build/
+/dist/
+
+# Go workspace files
+go.work
+go.work.sum
+
+# Dependency cache
+/vendor/
+
+# Temporary & log files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment / config
+.env
+.env.*
+config.yaml
+*.local
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Coverage / test output
+coverage.out

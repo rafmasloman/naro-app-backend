@@ -1,0 +1,9 @@
+.git
+.gitignore
+.vscode
+.idea
+*.log
+*.env
+vendor
+build
+dist
