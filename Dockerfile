@@ -3,26 +3,23 @@ FROM golang:1.24-alpine AS builder
 
 WORKDIR /app
 
-# Copy dependency files
+RUN apk add --no-cache git
+
 COPY go.mod go.sum ./
 RUN go mod download
+RUN go mod tidy
 
-# Copy seluruh source code
 COPY . .
 
-# Build binary
-RUN go build -o main .
+RUN go build -o main ./cmd
 
 # ---------- Stage 2: Run ----------
 FROM alpine:latest
 
 WORKDIR /app
 
-# Copy binary hasil build
 COPY --from=builder /app/main .
 
-# Expose port sesuai aplikasi
-EXPOSE 8080
+EXPOSE 8001
 
-# Jalankan aplikasi
 CMD ["./main"]
